@@ -101,7 +101,7 @@ impl std::fmt::Display for IopError {
 
 impl std::error::Error for IopError {}
 
-pub type Result<T> = std::result::Result<T, Box<dyn std::error::Error>>;
+pub type Result<T> = std::result::Result<T, Box<dyn std::error::Error + Send>>;
 
 #[allow(dead_code)]
 #[derive(PartialEq)]
